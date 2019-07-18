@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="29f10e37-c7ca-434d-9d5d-014129106ee6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbl_sparepart.`id_part` AS tbl_sparepart_id_part,
+     tbl_sparepart.`nama_part` AS tbl_sparepart_nama_part,
+     tbl_sparepart.`merk` AS tbl_sparepart_merk,
+     tbl_sparepart.`kd_kategori` AS tbl_sparepart_kd_kategori,
+     tbl_sparepart.`harga` AS tbl_sparepart_harga,
+     tbl_sparepart.`stok` AS tbl_sparepart_stok
+FROM
+     `tbl_sparepart` tbl_sparepart]]>
+	</queryString>
+	<field name="tbl_sparepart_id_part" class="java.lang.String"/>
+	<field name="tbl_sparepart_nama_part" class="java.lang.String"/>
+	<field name="tbl_sparepart_merk" class="java.lang.String"/>
+	<field name="tbl_sparepart_kd_kategori" class="java.lang.String"/>
+	<field name="tbl_sparepart_harga" class="java.lang.Integer"/>
+	<field name="tbl_sparepart_stok" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="191" y="13" width="200" height="20" uuid="699febf7-b257-46aa-b640-4a07f4f28b1d"/>
+				<textElement>
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA SPAREPART]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="367" y="17" width="77" height="20" uuid="2fa74a9e-32f8-4e33-b4bc-8189d7375b47"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[Hari&tanggal :]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="444" y="17" width="100" height="20" uuid="0a94850f-90b7-4dba-a763-458ff0a5c7b5"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="21" width="27" height="20" uuid="3e43b4d7-ba24-4171-bd74-5fb65734336d"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="21" width="76" height="20" uuid="10e2b8df-1c69-49c1-a6bb-31aa2d808e3d"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[KODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="21" width="113" height="20" uuid="736eb776-a984-4f60-9aaa-952a92663f5e"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="21" width="79" height="20" uuid="1fac5929-6a5c-4c7e-9a22-f6ed16c76831"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[MERK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="354" y="21" width="69" height="20" uuid="4cb5ca66-8093-4f4e-acc7-a261f57ce310"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[KATEGORI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="21" width="49" height="20" uuid="ceabf901-553e-4e03-9637-ddb6ec46ef70"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="21" width="49" height="20" uuid="d86dc9ca-b015-4201-8017-7560ed985142"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[STOK]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="12" width="529" height="1" uuid="1f37d086-c1d7-42f0-b42c-b3f534bc2f40"/>
+			</line>
+			<line>
+				<reportElement x="2" y="41" width="529" height="1" uuid="17cb6ae2-a10a-4e78-9400-f0351059b9b7"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="52" y="7" width="73" height="20" uuid="fbbbf603-5676-4d0e-9baa-3f52a86bc05f"/>
+				<textFieldExpression><![CDATA[$F{tbl_sparepart_id_part}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="7" width="100" height="20" uuid="3dfb17e2-957e-424a-8245-ab5519a0ebd5"/>
+				<textFieldExpression><![CDATA[$F{tbl_sparepart_nama_part}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="8" width="78" height="20" uuid="194c05be-cc29-4296-bf0d-f4f230c03f1d"/>
+				<textFieldExpression><![CDATA[$F{tbl_sparepart_merk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="354" y="7" width="69" height="20" uuid="3fc28ac8-ed30-4037-99b7-4962a3eb69f2"/>
+				<textFieldExpression><![CDATA[$F{tbl_sparepart_kd_kategori}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="423" y="7" width="49" height="20" uuid="c5bdb7e2-2245-420b-9b2c-3dcde6aa6148"/>
+				<textFieldExpression><![CDATA[$F{tbl_sparepart_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="485" y="8" width="46" height="20" uuid="9e920880-9e99-452c-8edf-20f0cd9e21af"/>
+				<textFieldExpression><![CDATA[$F{tbl_sparepart_stok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="4" width="27" height="20" uuid="61dd4133-e651-479a-92a7-04662e763d9d"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="142" splitType="Stretch">
+			<staticText>
+				<reportElement x="397" y="0" width="47" height="20" uuid="1811b958-fdb0-4b07-8f1d-b910a2190de4"/>
+				<text><![CDATA[Surakarta,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="531" y="122" width="20" height="20" uuid="99e5f32a-c656-43d4-8a2a-ca88c6ee4ae3"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="cf190eb2-2e37-43f1-9989-1a5d98b214ec"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="428" y="79" width="100" height="20" uuid="c9897bcf-7e11-4c9b-a1dd-0776dcb52b2c"/>
+				<text><![CDATA[Pemilik Toko]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

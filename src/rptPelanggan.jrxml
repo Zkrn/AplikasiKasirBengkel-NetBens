@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0f14668a-17a1-4862-ad02-e320c7ee3803">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbl_pelanggan.`no_polisi` AS tbl_pelanggan_no_polisi,
+     tbl_pelanggan.`motor` AS tbl_pelanggan_motor,
+     tbl_pelanggan.`nm_pelanggan` AS tbl_pelanggan_nm_pelanggan,
+     tbl_pelanggan.`alamat` AS tbl_pelanggan_alamat,
+     tbl_pelanggan.`tgl_masuk` AS tbl_pelanggan_tgl_masuk
+FROM
+     `tbl_pelanggan` tbl_pelanggan]]>
+	</queryString>
+	<field name="tbl_pelanggan_no_polisi" class="java.lang.String"/>
+	<field name="tbl_pelanggan_motor" class="java.lang.String"/>
+	<field name="tbl_pelanggan_nm_pelanggan" class="java.lang.String"/>
+	<field name="tbl_pelanggan_alamat" class="java.lang.String"/>
+	<field name="tbl_pelanggan_tgl_masuk" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="172" y="0" width="211" height="41" uuid="feb8fe6d-2b31-4c79-8533-adbd5ffb0bad"/>
+				<textElement>
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PELANGGAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="377" y="15" width="77" height="20" uuid="6b17a774-2387-47d0-a95b-c619bac8ec96"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[Hari&tanggal :]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="454" y="15" width="100" height="20" uuid="76f8ff82-6244-47be-a28c-8640b012336e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="22" width="27" height="20" uuid="c7098ccd-dd9a-4917-8ac1-e5ce8cffd17d"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="22" width="88" height="20" uuid="94f6aa3b-ccaa-4583-906a-f0f7eb5fb88e"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NO POLISI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="22" width="130" height="20" uuid="8031649b-e678-4ab9-ad48-1ff3ee04d2b8"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA PELANGGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="334" y="22" width="82" height="20" uuid="69b4eb93-3e50-4069-a33c-911c3e23647a"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="19" width="115" height="20" uuid="a65007c8-3996-42ab-9c3d-e0846488473b"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[TANGGAN MASUK]]></text>
+			</staticText>
+			<line>
+				<reportElement x="8" y="44" width="531" height="1" uuid="2422c873-3bd4-4642-965a-9cbb38fa0893"/>
+			</line>
+			<staticText>
+				<reportElement x="112" y="22" width="68" height="20" uuid="0dc6df98-4282-4d3a-8e60-bc422a153cb1"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[MOTOR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="7" y="18" width="531" height="1" uuid="7658b957-e661-42f4-ae15-ee442cc9377f"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="6" width="26" height="20" uuid="7c903398-4030-492c-be1a-e0216e9fc70c"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="34" y="6" width="88" height="20" uuid="a4516f3d-edf9-4d0d-b644-e93212b21193"/>
+				<textFieldExpression><![CDATA[$F{tbl_pelanggan_no_polisi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="6" width="68" height="20" uuid="1861782c-bd2e-4636-9fd6-55535d8b5e1f"/>
+				<textFieldExpression><![CDATA[$F{tbl_pelanggan_motor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="6" width="130" height="20" uuid="4fb1a759-6759-416c-abd1-29cc31e90c9b"/>
+				<textFieldExpression><![CDATA[$F{tbl_pelanggan_nm_pelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="334" y="7" width="100" height="20" uuid="e2261ab8-2f2e-4c1c-8f8b-282707658422"/>
+				<textFieldExpression><![CDATA[$F{tbl_pelanggan_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="7" width="99" height="20" uuid="50c1f043-6ab3-487f-9348-dccec38eb777"/>
+				<textFieldExpression><![CDATA[$F{tbl_pelanggan_tgl_masuk}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="139" splitType="Stretch">
+			<staticText>
+				<reportElement x="418" y="69" width="100" height="20" uuid="955f3019-d8fa-4cc0-a82f-628e654fc958"/>
+				<text><![CDATA[Pemilik Toko]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="454" y="5" width="100" height="20" uuid="f805f343-bdb0-4d9e-a42b-36c887db9161"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="401" y="5" width="47" height="20" uuid="bd6a664a-eaf4-47a0-8280-61c3960021f2"/>
+				<text><![CDATA[Surakarta,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="534" y="119" width="20" height="20" uuid="b338500c-8928-4e27-8c4a-b2bd74f027a2"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

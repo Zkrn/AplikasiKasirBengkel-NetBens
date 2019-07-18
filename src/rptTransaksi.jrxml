@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7eff773b-d764-48de-a350-bb07e62003a7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#73B0E6">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="dc8982e7-6d9c-40b8-9b08-78a525a52962"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbl_transaksi.`kd_transaksi` AS tbl_transaksi_kd_transaksi,
+     tbl_transaksi.`no_polisi` AS tbl_transaksi_no_polisi,
+     tbl_transaksi.`motor` AS tbl_transaksi_motor,
+     tbl_transaksi.`nm_pelanggan` AS tbl_transaksi_nm_pelanggan,
+     tbl_transaksi.`id_part` AS tbl_transaksi_id_part,
+     tbl_transaksi.`nama_part` AS tbl_transaksi_nama_part,
+     tbl_transaksi.`harga` AS tbl_transaksi_harga,
+     tbl_transaksi.`qty` AS tbl_transaksi_qty,
+     tbl_transaksi.`total` AS tbl_transaksi_total,
+     tbl_transaksi.`bayar` AS tbl_transaksi_bayar,
+     tbl_transaksi.`kembali` AS tbl_transaksi_kembali,
+     tbl_transaksi.`id_mekanik` AS tbl_transaksi_id_mekanik
+FROM
+     `tbl_transaksi` tbl_transaksi]]>
+	</queryString>
+	<field name="tbl_transaksi_kd_transaksi" class="java.lang.String"/>
+	<field name="tbl_transaksi_no_polisi" class="java.lang.String"/>
+	<field name="tbl_transaksi_motor" class="java.lang.String"/>
+	<field name="tbl_transaksi_nm_pelanggan" class="java.lang.String"/>
+	<field name="tbl_transaksi_id_part" class="java.lang.String"/>
+	<field name="tbl_transaksi_nama_part" class="java.lang.String"/>
+	<field name="tbl_transaksi_harga" class="java.lang.Integer"/>
+	<field name="tbl_transaksi_qty" class="java.lang.Integer"/>
+	<field name="tbl_transaksi_total" class="java.lang.Integer"/>
+	<field name="tbl_transaksi_bayar" class="java.lang.Integer"/>
+	<field name="tbl_transaksi_kembali" class="java.lang.Integer"/>
+	<field name="tbl_transaksi_id_mekanik" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="142" y="15" width="228" height="20" uuid="9c4f1bd8-8e3f-4e49-8157-4ae7b4c3828d"/>
+				<textElement>
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<text><![CDATA[FAKTUR PEMBELIAN SPAREPART]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="533" y="15" width="22" height="20" uuid="75f38afb-8ed6-4c4c-a4b4-51ab87a196b0"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="274" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="23" width="119" height="20" uuid="8aab9b8b-0044-476d-b2a8-2b77a6837331"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[KODE PENJUALAN :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="142" y="23" width="100" height="20" uuid="60b04946-0d7d-4d66-b3bd-66fa005a2c39"/>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_kd_transaksi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="53" width="119" height="20" uuid="77820a9c-8ea4-425f-9b4e-69d78cb39782"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NO POLISI :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="142" y="53" width="100" height="20" uuid="3649ee56-24eb-4e8d-876f-3f547d3ad0b5"/>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_no_polisi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="84" width="119" height="20" uuid="565e9c40-e63f-4406-82e4-c9be3eb3146e"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[MOTOR :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="142" y="84" width="100" height="20" uuid="0434b30d-33c6-4b27-a53b-05acc98643d7"/>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_motor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="23" width="145" height="20" uuid="f65e559c-d5e1-4aaa-92ef-cc836781de9a"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA PELANGGAN :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="451" y="23" width="100" height="20" uuid="4eb40000-2587-4d07-bcc6-1b3a8517e77e"/>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_nm_pelanggan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="126" width="25" height="20" uuid="2aaff82b-0b27-4d9e-a26c-aa1868b9fa84"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="12" y="152" width="24" height="20" uuid="a54b4742-3c0e-4556-b3ea-eed0b8d77a30"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="127" width="100" height="20" uuid="6b52774e-0bbd-4dc0-b7a6-7d84caaafbd3"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[ID PART]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="36" y="152" width="100" height="20" uuid="43104a67-8969-408a-b052-5add7aeb0948"/>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_id_part}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="136" y="126" width="100" height="20" uuid="b83fcb40-4424-4170-b0b7-ff7527aad1ee"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="136" y="152" width="100" height="20" uuid="66332877-12a9-4870-bfc8-af9b7b5682e1"/>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_nama_part}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="236" y="126" width="100" height="20" uuid="2d8e1407-4653-4eb8-9f82-b2fc10126a92"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="236" y="152" width="100" height="20" uuid="420cc8ba-9792-46e6-95cf-638a9a33bf42"/>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_harga}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="336" y="126" width="65" height="20" uuid="43ffa471-b0e7-4124-865c-211527511158"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="336" y="152" width="65" height="20" uuid="66a3403f-84ef-4588-884a-4cdbb9bf177f"/>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_qty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="399" y="127" width="100" height="20" uuid="30d6f4a0-d9ce-4c8e-918d-a5c9c8770169"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="401" y="152" width="100" height="20" uuid="b5d07840-3c9c-424f-a24c-9aa4aaa96879"/>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

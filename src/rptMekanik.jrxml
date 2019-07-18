@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5250ede9-012a-4c4d-a704-1425a9769a6b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="8c785278-a9b0-457a-b3d3-aee41af969d8"/>
+	<queryString language="SQL">
+		<![CDATA[Select * From tbl_mekanik]]>
+	</queryString>
+	<field name="id_mekanik" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nm_mekanik" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="176" y="15" width="221" height="29" uuid="6ecd995b-a5d2-4037-9197-cb4d5426535c"/>
+				<textElement>
+					<font fontName="Arial Black" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA MEKANIK]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="395" y="0" width="158" height="20" uuid="968ee021-3507-457e-aa76-11dca8115dae"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="312" y="0" width="85" height="20" uuid="ab10e0fe-e3a8-42d4-bd28-e2ee34c0e094"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[Hari&Tanggal  :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="112" y="33" width="32" height="20" uuid="29035fd8-898e-485f-ae51-da4158f4e0a6"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="33" width="96" height="20" uuid="150a3b43-dbcf-4ac7-a082-dd41992960c9"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[ID MEKANIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="33" width="119" height="20" uuid="a7acc9fb-3f69-423f-95c4-850edaf5bb7e"/>
+				<textElement>
+					<font fontName="Adobe Caslon Pro" size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA MEKANIK]]></text>
+			</staticText>
+			<line>
+				<reportElement x="112" y="23" width="304" height="1" uuid="1ced5ea5-ce0f-4469-8f02-f57bad71031d"/>
+			</line>
+			<line>
+				<reportElement x="112" y="53" width="304" height="1" uuid="8e4ba11d-010e-4463-9dd4-7c565554f71c"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="166" y="3" width="100" height="20" uuid="9be2fe40-765c-43fa-8331-dd84e4ef8376"/>
+				<textFieldExpression><![CDATA[$F{id_mekanik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="3" width="100" height="20" uuid="a0dcc62e-42bb-444c-bafc-8105ace1ae7b"/>
+				<textFieldExpression><![CDATA[$F{nm_mekanik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="3" width="29" height="20" uuid="cb3e1d2d-bf2e-40af-b53e-8e6c4b059eb0"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="121" splitType="Stretch">
+			<staticText>
+				<reportElement x="399" y="0" width="47" height="20" uuid="fac430e4-adef-42c0-b5c8-e7ae572cb03a"/>
+				<text><![CDATA[Surakarta,]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="452" y="0" width="100" height="20" uuid="7f06469a-9482-4875-ab13-bdba2ac5f615"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="416" y="64" width="100" height="20" uuid="e92e6471-1a91-44bf-bae8-f8f21118db3b"/>
+				<text><![CDATA[Pemilik Toko]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="532" y="101" width="20" height="20" uuid="bad534b1-df03-4007-87e0-724adab885cb"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
